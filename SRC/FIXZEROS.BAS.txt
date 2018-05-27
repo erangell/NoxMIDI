@@ -1,0 +1,19 @@
+ 1  INPUT "SONG:";SO$
+ 3  FOR VO = 0 TO 5
+ 5 F$ = "/BSMWMID2/WORK/" + SO$ + "." +  STR$ (VO)
+ 6  PRINT F$
+ 7  PRINT  CHR$ (4)"BLOAD "F$",A$2000"
+ 10 P = 8192 + 4:Q = P
+ 20  IF  PEEK (P + 2) = 0 AND  PEEK (P + 3) <  > 0 THEN  PRINT P":" PEEK (P)"," PEEK (P + 1)"," PEEK (P + 2)"," PEEK (P + 3): POKE P + 3,0
+ 30  IF  PEEK (P) = 128 AND  PEEK (P + 1) = 0 AND  PEEK (P + 2) = 0 AND  PEEK (P + 3) = 0 THEN 50
+ 35  IF Q <  > P THEN  POKE Q, PEEK (P): POKE Q + 1, PEEK (P + 1): POKE Q + 2, PEEK (P + 2): POKE Q + 3, PEEK (P + 3)
+ 40 Q = Q + 4
+ 50 P = P + 4
+ 60  VTAB 20: PRINT "P="P: VTAB 21: PRINT "Q="Q
+ 90  IF  PEEK (P + 1) <  > 255 THEN 20
+ 100  IF Q <  > P THEN  POKE Q, PEEK (P): POKE Q + 1, PEEK (P + 1): POKE Q + 2, PEEK (P + 2): POKE Q + 3, PEEK (P + 3):Q = Q + 4
+ 101 P = P + 4
+ 105  VTAB 20: PRINT "P="P: VTAB 21: PRINT "Q="Q
+ 110  PRINT "EOF="Q
+ 120  PRINT  CHR$ (4)"BSAVE ";F$;",A$2000,E";Q
+ 130  NEXT 

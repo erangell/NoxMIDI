@@ -1,0 +1,29 @@
+ 1  INPUT "SONG:";SO$
+ 3  FOR VO = 0 TO 5
+ 5 F$ = "/BSMWMID2/WORK/" + SO$ + "." +  STR$ (VO)
+ 6  PRINT F$
+ 7  PRINT  CHR$ (4)"BLOAD "F$",A$2000"
+ 10 P = 8192 + 4:Q = P + 4:R = P + 8
+ 20 DQ = 128 * ( PEEK (Q) - 128) +  PEEK (Q + 1)
+ 21 DR = 128 * ( PEEK (R) - 128) +  PEEK (R + 1)
+ 22  IF  PEEK (P + 3) = 0 THEN 50
+ 23  IF  PEEK (Q + 3) <  > 0 THEN 50
+ 24  IF DQ = 0 THEN 50
+ 25  IF  PEEK (P + 2) <  >  PEEK (Q + 2) THEN 50
+ 26  IF  PEEK (Q + 2) <  >  PEEK (R + 2) THEN 50
+ 30  REM    ?"FOUND:";: FOR J = 0 TO 11: PRINT  PEEK (P + J);",";: NEXT : PRINT  
+ 32 NQ = DQ - 15:NR = DR + 15
+ 34  POKE Q,128 +  INT (NQ / 128): POKE Q + 1,NQ -  INT (NQ / 128) * 128
+ 36  POKE R,128 +  INT (NR / 128): POKE R + 1,NR -  INT (NR / 128) * 128
+ 38  REM    ?"CHNGD:";: FOR J = 0 TO 11: PRINT  PEEK (P + J);",";: NEXT : PRINT   ]  
+ 50 P = P + 4:Q = Q + 4:R = R + 4
+ 59  GOTO 90
+ 60  VTAB 20: PRINT "P="P: VTAB 21: PRINT "Q="Q: VTAB 22: PRINT "R="R
+ 90  IF  PEEK (R + 1) <  > 255 THEN 20
+ 100 Q = Q + 4
+ 101 P = P + 4
+ 102 R = R + 3
+ 105  VTAB 20: PRINT "P="P: VTAB 21: PRINT "Q="Q: VTAB 22: PRINT "R="R
+ 110  PRINT "EOF="R
+ 120  PRINT  CHR$ (4)"BSAVE ";F$;",A$2000,E";R
+ 130  NEXT 

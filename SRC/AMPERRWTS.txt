@@ -1,0 +1,94 @@
+8000-   A9 0F       LDA   #$0F
+8002-   8D F6 03    STA   $03F6
+8005-   85 73       STA   $73
+8007-   A9 80       LDA   #$80
+8009-   8D F7 03    STA   $03F7
+800C-   85 74       STA   $74
+800E-   60          RTS
+800F-   C9 52       CMP   #$52
+8011-   D0 08       BNE   $801B
+8013-   A9 01       LDA   #$01
+8015-   8D D7 80    STA   $80D7
+8018-   4C 59 80    JMP   $8059
+801B-   C9 57       CMP   #$57
+801D-   D0 08       BNE   $8027
+801F-   A9 02       LDA   #$02
+8021-   8D D7 80    STA   $80D7
+8024-   4C 59 80    JMP   $8059
+8027-   C9 58       CMP   #$58
+8029-   F0 03       BEQ   $802E
+802B-   4C C9 DE    JMP   $DEC9
+802E-   20 B1 00    JSR   $00B1
+8031-   20 BB DE    JSR   $DEBB
+8034-   20 67 DD    JSR   $DD67
+8037-   20 52 E7    JSR   $E752
+803A-   A5 50       LDA   $50
+803C-   85 3C       STA   $3C
+803E-   A5 51       LDA   $51
+8040-   85 3D       STA   $3D
+8042-   20 BE DE    JSR   $DEBE
+8045-   20 67 DD    JSR   $DD67
+8048-   20 52 E7    JSR   $E752
+804B-   A5 50       LDA   $50
+804D-   85 3E       STA   $3E
+804F-   A5 51       LDA   $51
+8051-   85 3F       STA   $3F
+8053-   20 B3 FD    JSR   $FDB3
+8056-   4C 95 D9    JMP   $D995
+8059-   20 B1 00    JSR   $00B1
+805C-   20 BB DE    JSR   $DEBB
+805F-   20 67 DD    JSR   $DD67
+8062-   20 FB E6    JSR   $E6FB
+8065-   E0 23       CPX   #$23
+8067-   30 03       BMI   $806C
+8069-   4C C9 DE    JMP   $DEC9
+806C-   8A          TXA
+806D-   8D CF 80    STA   $80CF
+8070-   20 BE DE    JSR   $DEBE
+8073-   20 67 DD    JSR   $DD67
+8076-   20 FB E6    JSR   $E6FB
+8079-   E0 10       CPX   #$10
+807B-   30 03       BMI   $8080
+807D-   4C C9 DE    JMP   $DEC9
+8080-   8A          TXA
+8081-   8D D0 80    STA   $80D0
+8084-   20 BE DE    JSR   $DEBE
+8087-   20 67 DD    JSR   $DD67
+808A-   20 52 E7    JSR   $E752
+808D-   A5 50       LDA   $50
+808F-   8D D3 80    STA   $80D3
+8092-   C8          INY
+8093-   A5 51       LDA   $51
+8095-   8D D4 80    STA   $80D4
+8098-   20 B7 00    JSR   $00B7
+809B-   C9 2C       CMP   #$2C
+809D-   D0 13       BNE   $80B2
+809F-   20 B1 00    JSR   $00B1
+80A2-   20 67 DD    JSR   $DD67
+80A5-   20 FB E6    JSR   $E6FB
+80A8-   8A          TXA
+80A9-   F0 04       BEQ   $80AF
+80AB-   E0 03       CPX   #$03
+80AD-   30 05       BMI   $80B4
+80AF-   4C C9 DE    JMP   $DEC9
+80B2-   A9 01       LDA   #$01
+80B4-   8D CD 80    STA   $80CD
+80B7-   A9 DC       LDA   #$DC
+80B9-   8D D1 80    STA   $80D1
+80BC-   A9 80       LDA   #$80
+80BE-   8D D2 80    STA   $80D2
+80C1-   A9 80       LDA   #$80
+80C3-   A0 CB       LDY   #$CB
+80C5-   20 D9 03    JSR   $03D9
+80C8-   4C 95 D9    JMP   $D995
+80CB-   01 60       ORA   ($60,X)
+80CD-   01 00       ORA   ($00,X)
+80CF-   11 00       ORA   ($00),Y
+80D1-   DC          ???
+80D2-   80 00       BRA   $80D4
+80D4-   20 00 00    JSR   $0000
+80D7-   01 00       ORA   ($00,X)
+80D9-   FE 60 01    INC   $0160,X
+80DC-   00          BRK
+80DD-   01 EF       ORA   ($EF,X)
+80DF-   D8          CLD

@@ -1,0 +1,240 @@
+A900-   F4          ???
+A901-   E6 D9       INC   $D9
+A903-   CD C1 B7    CMP   $B7C1
+A906-   AC A3 9A    LDY   $9AA3
+A909-   91 89       STA   ($89),Y
+A90B-   81 E8       STA   ($E8,X)
+A90D-   CC B2 9A    CPY   $9AB2
+A910-   83          ???
+A911-   6D 59 45    ADC   $4559
+A914-   33          ???
+A915-   22          ???
+A916-   12 02       ORA   ($02)
+A918-   00          BRK
+A919-   00          BRK
+A91A-   00          BRK
+A91B-   00          BRK
+A91C-   00          BRK
+A91D-   00          BRK
+A91E-   00          BRK
+A91F-   00          BRK
+A920-   00          BRK
+A921-   00          BRK
+A922-   00          BRK
+A923-   00          BRK
+A924-   00          BRK
+A925-   00          BRK
+A926-   00          BRK
+A927-   00          BRK
+A928-   00          BRK
+A929-   00          BRK
+A92A-   38          SEC
+A92B-   00          BRK
+A92C-   00          BRK
+A92D-   00          BRK
+A92E-   00          BRK
+A92F-   00          BRK
+A930-   00          BRK
+A931-   00          BRK
+A932-   AA          TAX
+A933-   29 0F       AND   #$0F
+A935-   A8          TAY
+A936-   8A          TXA
+A937-   4A          LSR
+A938-   4A          LSR
+A939-   4A          LSR
+A93A-   4A          LSR
+A93B-   48          PHA
+A93C-   4A          LSR
+A93D-   4A          LSR
+A93E-   AA          TAX
+A93F-   68          PLA
+A940-   29 03       AND   #$03
+A942-   60          RTS
+A943-   00          BRK
+A944-   00          BRK
+A945-   00          BRK
+A946-   A9 A0       LDA   #$A0
+A948-   8D FE 03    STA   $03FE
+A94B-   A9 A9       LDA   #$A9
+A94D-   8D FF 03    STA   $03FF
+A950-   A9 01       LDA   #$01
+A952-   8D 95 A9    STA   $A995
+A955-   A9 AB       LDA   #$AB
+A957-   8D 96 A9    STA   $A996
+A95A-   A9 00       LDA   #$00
+A95C-   AA          TAX
+A95D-   9D 18 A9    STA   $A918,X
+A960-   E8          INX
+A961-   E0 12       CPX   #$12
+A963-   90 F8       BCC   $A95D
+A965-   A9 FF       LDA   #$FF
+A967-   8D 03 C4    STA   $C403
+A96A-   8D 02 C4    STA   $C402
+A96D-   8D 83 C4    STA   $C483
+A970-   8D 82 C4    STA   $C482
+A973-   8D 0B C4    STA   $C40B
+A976-   8D 0E C4    STA   $C40E
+A979-   A9 50       LDA   #$50
+A97B-   8D 05 C4    STA   $C405
+A97E-   58          CLI
+A97F-   4C B7 AA    JMP   $AAB7
+A982-   78          SEI
+A983-   A9 00       LDA   #$00
+A985-   A0 04       LDY   #$04
+A987-   8D 00 C4    STA   $C400
+A98A-   8C 00 C4    STY   $C400
+A98D-   8D 80 C4    STA   $C480
+A990-   8C 80 C4    STY   $C480
+A993-   60          RTS
+A994-   AD 00 00    LDA   $0000
+A997-   EE 95 A9    INC   $A995
+A99A-   D0 03       BNE   $A99F
+A99C-   EE 96 A9    INC   $A996
+A99F-   60          RTS
+A9A0-   A5 45       LDA   $45
+A9A2-   48          PHA
+A9A3-   AD 19 A9    LDA   $A919
+A9A6-   D0 08       BNE   $A9B0
+A9A8-   AD 1A A9    LDA   $A91A
+A9AB-   F0 0D       BEQ   $A9BA
+A9AD-   CE 1A A9    DEC   $A91A
+A9B0-   CE 19 A9    DEC   $A919
+A9B3-   A9 7F       LDA   #$7F
+A9B5-   8D 0D C4    STA   $C40D
+A9B8-   68          PLA
+A9B9-   40          RTI
+A9BA-   98          TYA
+A9BB-   48          PHA
+A9BC-   8A          TXA
+A9BD-   48          PHA
+A9BE-   20 94 A9    JSR   $A994
+A9C1-   C9 00       CMP   #$00
+A9C3-   D0 06       BNE   $A9CB
+A9C5-   20 46 A9    JSR   $A946
+A9C8-   4C B0 AA    JMP   $AAB0
+A9CB-   85 45       STA   $45
+A9CD-   8D 19 A9    STA   $A919
+A9D0-   A9 00       LDA   #$00
+A9D2-   8D 1A A9    STA   $A91A
+A9D5-   4C F9 A9    JMP   $A9F9
+A9D8-   BD 1E A9    LDA   $A91E,X
+A9DB-   CD 1C A9    CMP   $A91C
+A9DE-   90 0D       BCC   $A9ED
+A9E0-   D0 08       BNE   $A9EA
+A9E2-   BD 1D A9    LDA   $A91D,X
+A9E5-   CD 1B A9    CMP   $A91B
+A9E8-   90 03       BCC   $A9ED
+A9EA-   A9 09       LDA   #$09
+A9EC-   60          RTS
+A9ED-   A9 00       LDA   #$00
+A9EF-   60          RTS
+A9F0-   00          BRK
+A9F1-   00          BRK
+A9F2-   00          BRK
+A9F3-   00          BRK
+A9F4-   00          BRK
+A9F5-   00          BRK
+A9F6-   00          BRK
+A9F7-   00          BRK
+A9F8-   00          BRK
+A9F9-   18          CLC
+A9FA-   AD 19 A9    LDA   $A919
+A9FD-   6D 1B A9    ADC   $A91B
+AA00-   48          PHA
+AA01-   AD 1A A9    LDA   $A91A
+AA04-   6D 1C A9    ADC   $A91C
+AA07-   48          PHA
+AA08-   A5 45       LDA   $45
+AA0A-   6A          ROR
+AA0B-   90 03       BCC   $AA10
+AA0D-   4C 68 AA    JMP   $AA68
+AA10-   20 94 A9    JSR   $A994
+AA13-   20 32 A9    JSR   $A932
+AA16-   86 45       STX   $45
+AA18-   C9 00       CMP   #$00
+AA1A-   D0 08       BNE   $AA24
+AA1C-   B9 0B A9    LDA   $A90B,Y
+AA1F-   A2 01       LDX   #$01
+AA21-   4C 33 AA    JMP   $AA33
+AA24-   AA          TAX
+AA25-   B9 FF A8    LDA   $A8FF,Y
+AA28-   E0 02       CPX   #$02
+AA2A-   90 05       BCC   $AA31
+AA2C-   CA          DEX
+AA2D-   4A          LSR
+AA2E-   4C 28 AA    JMP   $AA28
+AA31-   A2 00       LDX   #$00
+AA33-   A8          TAY
+AA34-   A5 45       LDA   $45
+AA36-   C9 01       CMP   #$01
+AA38-   D0 0B       BNE   $AA45
+AA3A-   8E 24 A9    STX   $A924
+AA3D-   8C 23 A9    STY   $A923
+AA40-   A2 00       LDX   #$00
+AA42-   4C 5B AA    JMP   $AA5B
+AA45-   C9 02       CMP   #$02
+AA47-   D0 0A       BNE   $AA53
+AA49-   8E 26 A9    STX   $A926
+AA4C-   8C 25 A9    STY   $A925
+AA4F-   AA          TAX
+AA50-   4C 5B AA    JMP   $AA5B
+AA53-   8E 28 A9    STX   $A928
+AA56-   8C 27 A9    STY   $A927
+AA59-   A2 04       LDX   #$04
+AA5B-   68          PLA
+AA5C-   9D 1E A9    STA   $A91E,X
+AA5F-   68          PLA
+AA60-   9D 1D A9    STA   $A91D,X
+AA63-   4C BE A9    JMP   $A9BE
+AA66-   00          BRK
+AA67-   00          BRK
+AA68-   A2 00       LDX   #$00
+AA6A-   20 D8 A9    JSR   $A9D8
+AA6D-   8D 2B A9    STA   $A92B
+AA70-   A2 02       LDX   #$02
+AA72-   20 D8 A9    JSR   $A9D8
+AA75-   8D 2C A9    STA   $A92C
+AA78-   A2 04       LDX   #$04
+AA7A-   20 D8 A9    JSR   $A9D8
+AA7D-   8D 2D A9    STA   $A92D
+AA80-   A2 00       LDX   #$00
+AA82-   A0 04       LDY   #$04
+AA84-   8C 00 C4    STY   $C400
+AA87-   8C 80 C4    STY   $C480
+AA8A-   8E 01 C4    STX   $C401
+AA8D-   8E 81 C4    STX   $C481
+AA90-   A9 07       LDA   #$07
+AA92-   20 87 A9    JSR   $A987
+AA95-   BD 23 A9    LDA   $A923,X
+AA98-   8D 01 C4    STA   $C401
+AA9B-   8D 81 C4    STA   $C481
+AA9E-   A9 06       LDA   #$06
+AAA0-   20 87 A9    JSR   $A987
+AAA3-   E8          INX
+AAA4-   E0 0E       CPX   #$0E
+AAA6-   90 E2       BCC   $AA8A
+AAA8-   68          PLA
+AAA9-   8D 1C A9    STA   $A91C
+AAAC-   68          PLA
+AAAD-   8D 1B A9    STA   $A91B
+AAB0-   68          PLA
+AAB1-   AA          TAX
+AAB2-   68          PLA
+AAB3-   A8          TAY
+AAB4-   4C B3 A9    JMP   $A9B3
+AAB7-   AD FC B6    LDA   $B6FC
+AABA-   C9 13       CMP   #$13
+AABC-   F0 01       BEQ   $AABF
+AABE-   60          RTS
+AABF-   A9 EA       LDA   #$EA
+AAC1-   A2 02       LDX   #$02
+AAC3-   9D 8D A9    STA   $A98D,X
+AAC6-   9D 90 A9    STA   $A990,X
+AAC9-   9D 8D AA    STA   $AA8D,X
+AACC-   9D 87 AA    STA   $AA87,X
+AACF-   9D 9B AA    STA   $AA9B,X
+AAD2-   CA          DEX
+AAD3-   E0 FF       CPX   #$FF
+AAD5-   D0 EC       BNE   $AAC3
+AAD7-   60          RTS
