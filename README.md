@@ -1,5 +1,4 @@
-# NoxMock
-Bank Street Music Writer to MIDI Conversion for Nox Archaist
+# Bank Street Music Writer to MIDI Conversion for Nox Archaist
 
 1. When starting a new song project, copy the disk images BSMWMID1, BSMWMID2, and BSMWLOG
    to new filenames.  Example disk images with music data are found in BSMWMID1A, 
